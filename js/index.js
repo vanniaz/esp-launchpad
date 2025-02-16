@@ -680,13 +680,13 @@ async function downloadAndFlash(fileURL) {
 	let offset = 0x0000;
 	if ( strOffset !== undefined )
 	{
-		offset = parseInt(strOffset);
+	    offset = parseInt(strOffset);
 	}
     try {
         if (data !== undefined) {
             $('#v-pills-console-tab').click();
             const flashOptions = {
-				fileArray : [{data:data, address:offset}],
+		fileArray : [{data:data, address:offset}],
                 flashSize: "keep",
                 flashMode: undefined,
                 flashFreq: undefined,
@@ -694,10 +694,9 @@ async function downloadAndFlash(fileURL) {
                 compress: true,
             };
             await esploader.writeFlash(flashOptions);
-        }
-		else {
-			alert("Image file not found");
-		}
+        } else {
+	    alert("Image file not found");
+	}
     } catch (e) {
     }
 }
